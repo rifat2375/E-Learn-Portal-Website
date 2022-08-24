@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title> E-LEARN PORTAL</title>
+
+</head>
+
+<style>
+    Body {
+        background: #fff;
+        background: url(../images/register-bg.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: Calibri;
+    }
+    
+    h1 {
+        font-weight: bold;
+        color: #114bf8;
+        text-align: center;
+    }
+    
+    table {
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        background: linear-gradient(#f1c40f, #f39c12);
+        border-collapse: collapse;
+        border: 2px solid cornflowerblue;
+    }
+    
+    table tr td {
+        color: rgb(22, 20, 20);
+    }
+    
+    .btn {
+        padding: .7rem 3rem;
+        font-size: 1.5rem;
+        color: #fff;
+        background: var(--gradient);
+        border-radius: 5rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        box-shadow: 0 .1rem .3rem rgba(253, 2, 2, 0.3);
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+    }
+    
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: -1rem;
+        left: -100%;
+        background: #fff9;
+        height: 100%;
+        width: 10%;
+        transform: rotate(20deg);
+        z-index: -1;
+    }
+    
+    .btn:hover {
+        background: #fff;
+        color: rgb(34, 33, 33);
+    }
+</style>
+
+
+
+
+<body>
+
+    <h1>E-LEARN PORTAL </h1>
+
+    <form name="myform" method="post" onSubmit="return validate()">
+
+        <table align="center" cellpadding="10">
+
+            <!——— First Name ——>
+
+            <tr>
+
+                <td> First Name </td>
+
+                <td> <input type="text" name="fname" maxlength="30" /></td>
+
+            </tr>
+
+            <!——— Last Name ——>
+
+            <tr>
+
+                <td> Last Name </td>
+
+                <td> <input type="text" name="lname" maxlength="30" /></td>
+
+            </tr>
+
+            <!———DOB ——>
+
+            <tr>
+
+                <td> Date of Birth </td>
+
+                <td> <input type="date" name="date" id="date" min="1981-01-01" /></td>
+
+            </tr>
+
+            <!——— Email ID ——>
+
+            <tr>
+
+                <td> Email ID </td>
+
+                <td> <input type="text" name="email" maxlength="100" /></td>
+
+            </tr>
+
+
+            <!——— password.——>
+
+            <tr>
+
+                <td> Password </td>
+
+                <td> <input type="password" name="password" /> </td>
+
+            </tr>
+
+            <!——— Phone no.——>
+
+            <tr>
+
+                <td> Phone </td>
+
+                <td> <input type="text" name="phone" /> </td>
+
+            </tr>
+
+            <!——— Gender radio button——>
+
+            <tr>
+
+                <td> Gender </td>
+
+                <td> <input type="radio" name="gender" value="male" /> Male <input type="radio" name="gender" value="female" /> Female
+                </td>
+
+            </tr>
+
+
+            <!——— Country——>
+
+            <tr>
+
+                <td> Country</td>
+
+                <td> <input type="text" placeholder="Dhaka,Bangladesh" name="country" /></td>
+
+            </tr>
+
+
+
+
+            <!——— University.——>
+
+            <tr>
+
+                <td> University </td>
+
+                <td> <input type="text" name="University" /> </td>
+
+            </tr>
+
+            <!——— State select tag——>
+
+            <tr>
+
+
+                <td>Department</td>
+
+                <td>
+
+                    <select id="Department" name="Department">
+
+                        <option value="Select Your Department">Select Your Department</option>
+
+                        <option value="CSE">CSE</option>
+
+                        <option value="EEE">EEE</option>
+
+                        <option value="CIVIL">CIVIL</option>
+
+                        <option value="TEXTILE">TEXTILE</option>
+
+                        <option value="PHARMACY">PHARMACY</option>
+
+                        <option value="NFE">NFE</option>
+
+                        <option value="Admission">ADMISSION</option>
+
+                        <option value="Collage">COLLAGE</option>
+
+
+                        </select>
+
+                </td>
+
+            </tr>
+
+
+
+            <!——— Hobbies checkbox——>
+
+            <tr>
+
+                <td>Hobbies </td>
+
+                <td> Drawing : <input type="checkbox" name="hobby" id="hobby" value="draw" /> Playing : <input type="checkbox" name="hobby" id="hobby" value="play" /> ReadingBook : <input type="checkbox" name="hobby" id="hobby" value="read" /> Travelling:
+                    <input type="checkbox" name="hobby" id="hobby" value="travel" />
+
+                </td>
+
+            </tr>
+
+            <!——— About ——>
+
+            <tr>
+
+                <td>About</td>
+
+                <td><textarea name="about" placeholder="Write About Yourself" rows="5" cols="50"></textarea></td>
+
+            </tr>
+
+            <!—- Submit——->
+
+            <tr>
+
+                <td colspan="2" align="center">
+
+                    <input type="submit" class="btn" name="submit" value="SUBMIT" />
+
+                </td>
+
+            </tr>
+
+
+
+        </table>
+
+    </form>
+
+
+
+
+    <script type="text/javascript">
+        function validate()
+
+        {
+
+            var first = document.forms["myform"]["fname"].value;
+
+            var last = document.forms["myform"]["lname"].value;
+
+            var date = document.forms["myform"]["date"].value;
+
+            var email = document.forms["myform"]["email"].value;
+
+            var password = document.forms["myform"]["password"].value;
+
+            var phone = document.forms["myform"]["phone"].value;
+
+            var gender = document.forms["myform"]["gender"].value;
+
+            var address = document.forms["myform"]["about"].value;
+
+            var campus = document.forms["myform"]["Department"].value;
+
+            var hobby = document.getElementById(“hobby”);
+
+            // first name validation
+
+            if (first == "")
+
+            {
+
+                alert("enter the name");
+
+                return false;
+
+            }
+
+            if (!isNaN(first))
+
+            {
+
+                alert("name should be in character");
+
+                return false;
+
+            }
+
+            //last name validation
+
+            if (last == "")
+
+            {
+
+                alert("enter the last name');
+
+                    return false;
+                }
+
+                if (!isNaN(last))
+
+                {
+
+                    alert("name should be in character");
+
+                    return false;
+
+                }
+
+                // DOB validation
+
+                if (date == "")
+
+                {
+
+                    alert("enter date");
+
+                    return false;
+
+                }
+
+                // email validation
+
+                var at = email.indexOf("@");
+
+                var dot = email.lastIndexOf(".");
+
+                if (at < 1 || dot < at + 2 || dot + 2 >= email.lenght)
+
+                {
+
+                    alert("Not a valid email");
+
+                    return false;
+
+                }
+
+
+                if (password == "")
+
+                {
+
+                    alert("enter password .");
+
+                    return false;
+                }
+
+                //phone no. validation
+
+                if (phone == "")
+
+                {
+
+                    alert("enter phone no.");
+
+                    return false;
+                }
+
+                if (isNaN(phone))
+
+                {
+
+                    alert("phone no. should be in digit.");
+
+                    return false;
+
+                }
+
+                if (phone.length != 10)
+
+                {
+
+                    alert("must be 10 digit no.");
+
+                    return false;
+
+                }
+
+                //gender radio validation
+
+                if (gender == "")
+
+                {
+
+                    alert("seelct a gender");
+
+                    return false;
+
+                }
+
+                // address validation
+
+                if (address == "")
+
+                {
+
+                    alert("Enter Address");
+
+                    return false;
+
+                }
+
+                // state validation
+
+                if (campus == "Select a campus")
+
+                {
+
+                    alert("select a campus");
+
+                    return false;
+
+                }
+
+                // hobbies validation
+
+                if (!hobby.checked)
+
+                {
+
+                    alert("select a hobby");
+
+                    return false;
+
+                }
+
+            }
+    </script>
+
+</body>
+
+</html>
